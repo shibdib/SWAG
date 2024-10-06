@@ -525,7 +525,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod {
     }
 
     else {
-      let wave: BossLocationSpawn = SWAG.configureBossWave(boss, globalmap);
+      const wave: BossLocationSpawn = SWAG.configureBossWave(boss, globalmap);
       locations[globalmap].base.BossLocationSpawn.push(wave);
     }
   }
@@ -535,7 +535,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod {
     globalmap: LocationName,
   ): void {
 
-    let wave: BossLocationSpawn = SWAG.configureBossWave(boss, globalmap);
+    const wave: BossLocationSpawn = SWAG.configureBossWave(boss, globalmap);
     locations[globalmap].base.BossLocationSpawn.push(wave);
   }
 
@@ -544,19 +544,19 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod {
     globalmap: LocationName,
   ): void {
 
-    let wave: BossLocationSpawn = SWAG.configureBossWave(boss, globalmap);
+    const wave: BossLocationSpawn = SWAG.configureBossWave(boss, globalmap);
     locations[globalmap].base.BossLocationSpawn.push(wave);
   }
 
   static configureBossWave(boss: BossLocationSpawn, globalmap: LocationName): BossLocationSpawn {
     let spawnChance = 0;
     let spawnZones = boss.BossZone || null;
-    let bossName = roleCase[boss.BossName.toLowerCase()] || boss.BossName;
+    const bossName = roleCase[boss.BossName.toLowerCase()] || boss.BossName;
 
     const getRandomDifficulty = () => {
-        const availableDifficulties = ["easy", "normal", "hard", "impossible"];
-        const randomIndex = Math.floor(Math.random() * availableDifficulties.length);
-        return availableDifficulties[randomIndex];
+      const availableDifficulties = ["easy", "normal", "hard", "impossible"];
+      const randomIndex = Math.floor(Math.random() * availableDifficulties.length);
+      return availableDifficulties[randomIndex];
     };
 
     let difficultyKey = boss.BossDifficult || config.BossDifficulty.toLowerCase();
@@ -566,8 +566,8 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod {
     let escort_difficulty = escortDifficultyKey === "asonline" ? getRandomDifficulty() : diffProper[escortDifficultyKey];
 
     boss?.Supports?.forEach((escort) => {
-        escort.BossEscortDifficult = [escort_difficulty];
-        escort.BossEscortType = roleCase[escort.BossEscortType.toLowerCase()];
+      escort.BossEscortDifficult = [escort_difficulty];
+      escort.BossEscortType = roleCase[escort.BossEscortType.toLowerCase()];
     });
 
     // exclusive to bosses only
