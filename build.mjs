@@ -222,11 +222,12 @@ async function loadPackageJson(currentDir) {
  */
 function createProjectName(packageJson) {
     // Remove any non-alphanumeric characters from the author and name.
-    const author = packageJson.author.replace(/\W/g, "");
-    const name = packageJson.name.replace(/\W/g, "");
+    // const author = packageJson.author.replace(/\W/g, "");
+    // const name = packageJson.name.replace(/\W/g, "");
 
     // Ensure the name is lowercase, as per the package.json specification.
-    return `${author}-${name}`.toLowerCase();
+    // return `${author}-${name}`.toLowerCase();
+    return "SWAG";
 }
 
 /**
