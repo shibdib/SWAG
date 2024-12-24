@@ -1,7 +1,7 @@
 import {
-    BossLocationSpawn,
+    IBossLocationSpawn,
     ILocationBase,
-    Wave
+    IWave
 } from "@spt/models/eft/common/ILocationBase";
 import { ConfigTypes } from "@spt/models/enums/ConfigTypes";
 import { IPostDBLoadMod } from "@spt/models/external/IPostDBLoadMod";
@@ -112,15 +112,12 @@ let BossWaveSpawnedOnceAlready: boolean;
 const customPatterns: Record<string, ClassDef.GroupPattern> = {};
 
 type LocationName = keyof Omit<ILocations, "base">;
-type LocationBackupData = Record<
-LocationName,
-| {
-    waves: Wave[];
-    BossLocationSpawn: BossLocationSpawn[];
+type LocationBackupData = Record<LocationName,
+{
+    waves: IWave[];
+    BossLocationSpawn: IBossLocationSpawn[];
     openZones: string[];
-}
-| undefined
->;
+} | undefined>;
 
 type GlobalPatterns = Record<string, MapPatterns>;
 type MapPatterns = {
@@ -256,7 +253,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                     // disable more vanilla spawn stuff
                     locationConfig.splitWaveIntoSingleSpawnsSettings.enabled = false;
                     locationConfig.rogueLighthouseSpawnTimeSettings.enabled = false;
-                    locationConfig.fixEmptyBotWavesSettings.enabled = false;
+                    //locationConfig.fixEmptyBotWavesSettings.enabled = false;
                     locationConfig.addOpenZonesToAllMaps = false;
                     locationConfig.addCustomBotWavesToMaps = false;
                     locationConfig.enableBotTypeLimits = false;
@@ -284,7 +281,71 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                 {
                     try 
                     {
-                        return SWAG.configureRaid(container, httpResponse);
+                        // Retrieve configurations
+                        const botConfig = container.resolve<ConfigServer>("ConfigServer").getConfig<IBotConfig>(ConfigTypes.BOT);
+                        const pmcConfig = container.resolve<ConfigServer>("ConfigServer").getConfig<IPmcConfig>(ConfigTypes.PMC);
+
+                        // Disable PMC conversion
+                        const conversionTypes = ["assault", "cursedassault", "pmcbot", "exusec", "arenafighter", "arenafighterevent", "crazyassaultevent"];
+                        ClassDef.validMaps.forEach(location =>
+                        {
+                            conversionTypes.forEach(botType =>
+                            {
+                                const mapPmcChances = pmcConfig.convertIntoPmcChance[location];
+                                if (mapPmcChances)
+                                {
+                                    mapPmcChances[botType] = { min: 0, max: 0 };
+                                }
+                            });
+                        });
+                        logger.info("SWAG: PMC conversion is OFF (this is good - be sure this loads AFTER Realism/SVM)");
+
+                        // Adjust time and map caps
+                        const appContext = container.resolve<ApplicationContext>("ApplicationContext");
+                        const weatherController = container.resolve<WeatherController>("WeatherController");
+                        const matchInfoStartOff = appContext.getLatestValue(ContextVariableType.RAID_CONFIGURATION).getValue<IGetRaidConfigurationRequestData>();
+                        const time = weatherController.generate().time;
+
+                        let realTime = time;
+                        if (matchInfoStartOff.timeVariant === "PAST") 
+                        {
+                            let [hours, minutes] = time.split(":").map(Number);
+                            hours = (hours - 12 + 24) % 24; // Adjust time backwards by 12 hours and ensure it wraps correctly
+                            realTime = `${hours}:${minutes}`;
+                        }
+
+                        // Determine Time of Day
+                        let TOD = "day";
+                        const [hours] = realTime.split(":").map(Number);
+                        if ((matchInfoStartOff.location !== "factory4_night" && hours >= 5 && hours < 22) ||
+                            matchInfoStartOff.location === "factory4_day" ||
+                        matchInfoStartOff.location.toLowerCase() === "laboratory") 
+                        {
+                            TOD = "day";
+                        }
+                        else 
+                        {
+                            TOD = "night";
+                        }
+
+                        // Set map caps based on Time of Day
+                        if (TOD === "day") 
+                        {
+                            Object.keys(config.MaxBotCap).forEach(key => 
+                            {
+                                botConfig.maxBotCap[key] = config.MaxBotCap[key];
+                            });
+                        }
+                        else 
+                        { // "night"
+                            Object.keys(config.NightMaxBotCap).forEach(key => 
+                            {
+                                botConfig.maxBotCap[key] = config.NightMaxBotCap[key];
+                            });
+                        }
+                        logger.info(`SWAG: ${TOD} Raid Max Bot Caps set`);
+
+                        return httpResponse.nullResponse();
                     }
                     catch (e) 
                     {
@@ -295,71 +356,6 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
             }],
             "SWAG"
         );
-    }
-
-    private static configureRaid(container: DependencyContainer, httpResponse: HttpResponseUtil)
-    {
-        // Retrieve configurations
-        const botConfig = container.resolve<ConfigServer>("ConfigServer").getConfig<IBotConfig>(ConfigTypes.BOT);
-        const pmcConfig = container.resolve<ConfigServer>("ConfigServer").getConfig<IPmcConfig>(ConfigTypes.PMC);
-
-        // Disable PMC conversion
-        const conversionTypes = ["assault", "cursedassault", "pmcbot", "exusec", "arenafighter", "arenafighterevent", "crazyassaultevent"];
-        conversionTypes.forEach(type => 
-        {
-            pmcConfig.convertIntoPmcChance[type] = { min: 0, max: 0 };
-        });
-
-        logger.info("SWAG: PMC conversion is OFF (this is good - be sure this loads AFTER Realism/SVM)");
-
-        // Adjust time and map caps
-        const appContext = container.resolve<ApplicationContext>("ApplicationContext");
-        const weatherController = container.resolve<WeatherController>("WeatherController");
-        const matchInfoStartOff = appContext.getLatestValue(ContextVariableType.RAID_CONFIGURATION).getValue<IGetRaidConfigurationRequestData>();
-        const time = weatherController.generate().time;
-
-        let realTime = time;
-        if (matchInfoStartOff.timeVariant === "PAST") 
-        {
-            let [hours, minutes] = time.split(":").map(Number);
-            hours = (hours - 12 + 24) % 24; // Adjust time backwards by 12 hours and ensure it wraps correctly
-            realTime = `${hours}:${minutes}`;
-        }
-
-        // Determine Time of Day
-        let TOD = "day";
-        const [hours] = realTime.split(":").map(Number);
-        if ((matchInfoStartOff.location !== "factory4_night" && hours >= 5 && hours < 22) ||
-            matchInfoStartOff.location === "factory4_day" ||
-            matchInfoStartOff.location.toLowerCase() === "laboratory") 
-        {
-            TOD = "day";
-        }
-
-        else 
-        {
-            TOD = "night";
-        }
-
-        // Set map caps based on Time of Day
-        if (TOD === "day") 
-        {
-            Object.keys(config.MaxBotCap).forEach(key => 
-            {
-                botConfig.maxBotCap[key] = config.MaxBotCap[key];
-            });
-        }
-
-        else 
-        { // "night"
-            Object.keys(config.NightMaxBotCap).forEach(key => 
-            {
-                botConfig.maxBotCap[key] = config.NightMaxBotCap[key];
-            });
-        }
-        logger.info(`SWAG: ${TOD} Raid Max Bot Caps set`);
-
-        return httpResponse.nullResponse();
     }
 
     postDBLoad(container: DependencyContainer): void 
@@ -383,7 +379,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
    * @param map
    * @returns
    */
-    static GetOpenZones(map: LocationName): string[] 
+    static getOpenZones(map: LocationName): string[] 
     {
         const baseobj: ILocationBase = locations[map]?.base;
 
@@ -581,7 +577,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
         }
         else 
         {
-            const wave: BossLocationSpawn = SWAG.configureBossWave(boss, globalmap);
+            const wave: IBossLocationSpawn = SWAG.configureBossWave(boss, globalmap);
             locations[globalmap].base.BossLocationSpawn.push(wave);
         }
     }
@@ -592,7 +588,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
     ): void 
     {
 
-        const wave: BossLocationSpawn = SWAG.configureBossWave(boss, globalmap);
+        const wave: IBossLocationSpawn = SWAG.configureBossWave(boss, globalmap);
         locations[globalmap].base.BossLocationSpawn.push(wave);
     }
 
@@ -602,11 +598,11 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
     ): void 
     {
 
-        const wave: BossLocationSpawn = SWAG.configureBossWave(boss, globalmap);
+        const wave: IBossLocationSpawn = SWAG.configureBossWave(boss, globalmap);
         locations[globalmap].base.BossLocationSpawn.push(wave);
     }
 
-    static configureBossWave(boss: BossLocationSpawn, globalmap: LocationName): BossLocationSpawn 
+    static configureBossWave(boss: IBossLocationSpawn, globalmap: LocationName): IBossLocationSpawn 
     {
         let spawnChance = 0;
         let spawnZones = boss.BossZone || null;
@@ -664,17 +660,16 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
         }
 
         // Using the SPT class here
-        const wave: BossLocationSpawn = {
+        const wave: IBossLocationSpawn = {
             BossName: bossName,
             BossChance: spawnChance,
             BossZone: spawnZones != null
-                ? spawnZones
-                : SWAG.savedLocationData[globalmap].openZones &&
-          SWAG.savedLocationData[globalmap].openZones.length > 0
-                    ? randomUtil.getStringArrayValue(
-                        SWAG.savedLocationData[globalmap].openZones
-                    )
-                    : "",
+                ?   spawnZones
+                :   SWAG.savedLocationData[globalmap] &&
+                    SWAG.savedLocationData[globalmap].openZones &&
+                    SWAG.savedLocationData[globalmap].openZones.length > 0
+                    ?   randomUtil.getStringArrayValue(SWAG.savedLocationData[globalmap].openZones)
+                    :   "",
             BossPlayer: false,
             BossDifficult: difficulty,
             BossEscortType: roleCase[boss.BossEscortType.toLowerCase()],
@@ -696,7 +691,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
         return wave;
     }
 
-    static adjustBossSpawnChance(boss: BossLocationSpawn, globalmap: LocationName): number 
+    static adjustBossSpawnChance(boss: IBossLocationSpawn, globalmap: LocationName): number 
     {
         // I need to refactor this garbage
         if (boss.BossName === "bosspunisher") 
@@ -826,7 +821,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                 SWAG.savedLocationData[map] = {
                     waves: locationBase.waves,
                     BossLocationSpawn: locationBase.BossLocationSpawn,
-                    openZones: this.GetOpenZones(map),
+                    openZones: this.getOpenZones(map)
                 };
             }
 
