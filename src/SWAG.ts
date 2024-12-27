@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import {
     IBossLocationSpawn,
     ILocationBase,
@@ -12,7 +13,6 @@ import { ILocations } from "@spt/models/spt/server/ILocations";
 import { ILocationConfig } from "@spt/models/spt/config/ILocationConfig";
 import { ILogger } from "@spt/models/spt/utils/ILogger";
 import { ConfigServer } from "@spt/servers/ConfigServer";
-import { IGlobals } from "@spt/models/eft/common/IGlobals";
 import { DatabaseServer } from "@spt/servers/DatabaseServer";
 import { ContextVariableType } from "@spt/context/ContextVariableType";
 import { ApplicationContext } from "@spt/context/ApplicationContext";
@@ -29,11 +29,9 @@ import { ProfileHelper } from "@spt/helpers/ProfileHelper";
 
 import * as fs from "fs";
 import * as path from "path";
-import * as ClassDef from "./ClassDef";
 import {
-    BossPattern,
-    GroupPattern,
-    aiAmountProper,
+    IBossPattern,
+    validMaps,
     diffProper,
     roleCase,
     reverseMapNames,
@@ -97,19 +95,12 @@ const modName = "SWAG";
 let logger: ILogger;
 let locationCallbacks: LocationCallbacks;
 let jsonUtil: JsonUtil;
-let botConfig: IBotConfig;
-let pmcConfig: IBotConfig;
-let iGlobals: IGlobals;
-let configServer: ConfigServer;
 let databaseServer: DatabaseServer;
 let locations: ILocations;
 let seasonalEvents: SeasonalEventService;
 let randomUtil: RandomUtil;
 let profileHelper: ProfileHelper;
 let sessionId: string;
-let BossWaveSpawnedOnceAlready: boolean;
-
-const customPatterns: Record<string, ClassDef.GroupPattern> = {};
 
 type LocationName = keyof Omit<ILocations, "base">;
 type LocationBackupData = Record<LocationName,
@@ -119,11 +110,6 @@ type LocationBackupData = Record<LocationName,
     openZones: string[];
 } | undefined>;
 
-type GlobalPatterns = Record<string, MapPatterns>;
-type MapPatterns = {
-    MapGroups: GroupPattern[];
-    MapBosses: BossPattern[];
-};
 
 class SWAG implements IPreSptLoadMod, IPostDBLoadMod 
 {
@@ -149,7 +135,6 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
         terminal: undefined,
         town: undefined
     };
-    public static pmcType: string[] = ["sptbear", "sptusec"];
 
     public static randomWaveTimer = {
         time_min: 0,
@@ -191,7 +176,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                         url: string,
                         info: any,
                         sessionID: string,
-                        output: string
+                        _output: string
                     ): Promise<any> => 
                     {
                         sessionId = sessionID;
@@ -213,7 +198,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                         url: string,
                         info: any,
                         sessionID: string,
-                        output: string
+                        _output: string
                     ): Promise<any> => 
                     {
                         sessionId = sessionID;
@@ -273,10 +258,10 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
             [{
                 url: "/client/raid/configuration",
                 action: async (
-                    url: string,
-                    info: any,
-                    sessionID: string,
-                    output: string
+                    _url: string,
+                    _info: any,
+                    _sessionID: string,
+                    _output: string
                 ): Promise<any> => 
                 {
                     try 
@@ -287,7 +272,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
 
                         // Disable PMC conversion
                         const conversionTypes = ["assault", "cursedassault", "pmcbot", "exusec", "arenafighter", "arenafighterevent", "crazyassaultevent"];
-                        ClassDef.validMaps.forEach(location =>
+                        validMaps.forEach(location =>
                         {
                             conversionTypes.forEach(botType =>
                             {
@@ -319,7 +304,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                         const [hours] = realTime.split(":").map(Number);
                         if ((matchInfoStartOff.location !== "factory4_night" && hours >= 5 && hours < 22) ||
                             matchInfoStartOff.location === "factory4_day" ||
-                        matchInfoStartOff.location.toLowerCase() === "laboratory") 
+                            matchInfoStartOff.location.toLowerCase() === "laboratory") 
                         {
                             TOD = "day";
                         }
@@ -363,9 +348,6 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
         logger = container.resolve<ILogger>("WinstonLogger");
         locationCallbacks = container.resolve<LocationCallbacks>("LocationCallbacks");
         jsonUtil = container.resolve<JsonUtil>("JsonUtil");
-        configServer = container.resolve<ConfigServer>("ConfigServer");
-        botConfig = configServer.getConfig<IBotConfig>(ConfigTypes.BOT);
-        pmcConfig = configServer.getConfig<IBotConfig>(ConfigTypes.PMC);
         databaseServer = container.resolve<DatabaseServer>("DatabaseServer");
         locations = databaseServer.getTables().locations;
         randomUtil = container.resolve<RandomUtil>("RandomUtil");
@@ -445,8 +427,8 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                     }
 
                     const shouldSkip = boss.BossChance === 0 ||
-            (bossConfig.Bosses.useGlobalBossSpawnChance &&
-              bossConfig.Bosses[reverseBossNames[boss.BossName]][mapKey] === 0);
+                        (bossConfig.Bosses.useGlobalBossSpawnChance &&
+                        bossConfig.Bosses[reverseBossNames[boss.BossName]][mapKey] === 0);
                     return !shouldSkip;
                 });
 
@@ -498,16 +480,16 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                     if (boss.BossName == "gifter") 
                     {
                         if (!bossConfig.CustomBosses.santa.enabled ||
-              (!seasonalEvents.christmasEventEnabled() && !bossConfig.CustomBosses.santa.forceSpawnOutsideEvent)) 
+                            (!seasonalEvents.christmasEventEnabled() && !bossConfig.CustomBosses.santa.forceSpawnOutsideEvent)) 
                         {
                             return false;
                         }
                     }
 
                     const shouldSkip = boss.BossChance === 0 ||
-            !bossConfig.CustomBosses[reverseBossNames[boss.BossName]].enabled ||
-            (bossConfig.CustomBosses[reverseBossNames[boss.BossName]].enabled &&
-              bossConfig.CustomBosses[reverseBossNames[boss.BossName]][mapKey] === 0);
+                        !bossConfig.CustomBosses[reverseBossNames[boss.BossName]].enabled ||
+                        (bossConfig.CustomBosses[reverseBossNames[boss.BossName]].enabled &&
+                        bossConfig.CustomBosses[reverseBossNames[boss.BossName]][mapKey] === 0);
                     return !shouldSkip;
                 });
 
@@ -520,7 +502,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
         Object.values(otherConfigs).forEach(array => this.shuffleArray(array));
         Object.values(customConfigs).forEach(array => this.shuffleArray(array));
 
-        ClassDef.validMaps.forEach((globalmap: LocationName) => 
+        validMaps.forEach((globalmap: LocationName) => 
         {
             if (bossConfigs[reverseMapNames[globalmap]]) 
             {
@@ -554,7 +536,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
     }
 
     static spawnBosses(
-        boss: ClassDef.BossPattern,
+        boss: IBossPattern,
         globalmap: LocationName
     ): void 
     {
@@ -583,7 +565,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
     }
 
     static spawnBots(
-        boss: ClassDef.BossPattern,
+        boss: IBossPattern,
         globalmap: LocationName
     ): void 
     {
@@ -593,7 +575,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
     }
 
     static spawnCustom(
-        boss: ClassDef.BossPattern,
+        boss: IBossPattern,
         globalmap: LocationName
     ): void 
     {

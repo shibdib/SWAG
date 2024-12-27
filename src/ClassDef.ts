@@ -1,62 +1,9 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { IBossLocationSpawn } from "@spt/models/eft/common/ILocationBase";
 
-export interface BossPattern extends IBossLocationSpawn {
+export interface IBossPattern extends IBossLocationSpawn
+{
     OnlySpawnOnce?: boolean;
-}
-
-export class Bot {
-    BotType: string;
-    MaxBotCount: number;
-}
-
-export class GroupPattern {
-    Name: string;
-    Bots: Bot[];
-    Time_min: number;
-    Time_max: number;
-    BotZone: string;
-    RandomTimeSpawn?: boolean;
-    OnlySpawnOnce?: boolean;
-}
-
-export class MapWrapper {
-    MapName: string;
-    MapGroups: GroupPattern[];
-    MapBosses: BossPattern[];
-}
-
-export class SpawnPointParam {
-    Id: string;
-    Position: Position;
-    Rotation: number;
-    Sides: string[];
-    Categories: string[];
-    Infiltration: string;
-    DelayToCanSpawnSec: number;
-    ColliderParams: ColliderParams;
-    BotZoneName: string;
-}
-
-export class Position {
-    x: number;
-    y: number;
-    z: number;
-}
-
-export class ColliderParams {
-    _parent: string;
-    _props: Props;
-}
-
-export class Center {
-    x: number;
-    y: number;
-    z: number;
-}
-
-export class Props {
-    Center: Center;
-    Radius: number;
 }
 
 export const roleCase: object = {
@@ -154,8 +101,6 @@ export const diffProper = {
     impossible: "impossible"
 };
 
-export const pmcType: string[] = ["sptbear", "sptusec"];
-
 export const validMaps: string[] = [
     "bigmap",
     "factory4_day",
@@ -170,11 +115,3 @@ export const validMaps: string[] = [
     "sandbox",
     "sandbox_high"
 ];
-
-export const aiAmountProper = {
-    low: 0.5,
-    asonline: 1,
-    medium: 1,
-    high: 2,
-    horde: 4
-};
