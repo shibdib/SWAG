@@ -176,7 +176,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                         url: string,
                         info: any,
                         sessionID: string,
-                        output: string
+                        _output: string
                     ): Promise<any> => 
                     {
                         sessionId = sessionID;
@@ -198,7 +198,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                         url: string,
                         info: any,
                         sessionID: string,
-                        output: string
+                        _output: string
                     ): Promise<any> => 
                     {
                         sessionId = sessionID;
@@ -258,10 +258,10 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
             [{
                 url: "/client/raid/configuration",
                 action: async (
-                    url: string,
-                    info: any,
-                    sessionID: string,
-                    output: string
+                    _url: string,
+                    _info: any,
+                    _sessionID: string,
+                    _output: string
                 ): Promise<any> => 
                 {
                     try 
