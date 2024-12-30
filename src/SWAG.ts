@@ -643,8 +643,13 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
 
         // Using the SPT class here
         const wave: IBossLocationSpawn = {
-            BossName: bossName,
             BossChance: spawnChance,
+            BossDifficult: difficulty,
+            BossName: bossName,
+            BossPlayer: false,
+            BossEscortAmount: boss.BossEscortAmount || "0",
+            BossEscortDifficult: escort_difficulty,
+            BossEscortType: roleCase[boss.BossEscortType.toLowerCase()],
             BossZone: spawnZones != null
                 ?   spawnZones
                 :   SWAG.savedLocationData[globalmap] &&
@@ -652,17 +657,14 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                     SWAG.savedLocationData[globalmap].openZones.length > 0
                     ?   randomUtil.getStringArrayValue(SWAG.savedLocationData[globalmap].openZones)
                     :   "",
-            BossPlayer: false,
-            BossDifficult: difficulty,
-            BossEscortType: roleCase[boss.BossEscortType.toLowerCase()],
-            BossEscortDifficult: escort_difficulty,
-            BossEscortAmount: boss.BossEscortAmount || "0",
-            Time: boss.Time || -1,
-            Supports: boss.Supports || null,
+            ForceSpawn: boss.ForceSpawn || false,
+            IgnoreMaxBots: true,
             RandomTimeSpawn: boss.RandomTimeSpawn || false,
+            spawnMode: ["pve", "regular"],
+            Supports: boss.Supports || null,
+            Time: boss.Time || -1,
             TriggerId: boss.TriggerId || "",
-            TriggerName: boss.TriggerName || "",
-            spawnMode: []
+            TriggerName: boss.TriggerName || ""
         };
 
         if (spawnChance != 0 && config.DebugOutput) 

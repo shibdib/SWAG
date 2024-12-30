@@ -3,21 +3,21 @@
     {
       "BossChance": 11,
       "BossEscortAmount": "6",
-      "BossEscortType": "followerboar",
-      "BossName": "bossboar",
+      "BossEscortType": "followerBoar",
+      "BossName": "bossBoar",
       "BossZone": null,
       "Supports": [
         {
           "BossEscortAmount": "4",
-          "BossEscortType": "followerboar"
+          "BossEscortType": "followerBoar"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose1"
+          "BossEscortType": "followerBoarClose1"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose2"
+          "BossEscortType": "followerBoarClose2"
         }
       ],
       "Time": -1
@@ -27,21 +27,21 @@
     {
       "BossChance": 11,
       "BossEscortAmount": "6",
-      "BossEscortType": "followerboar",
-      "BossName": "bossboar",
+      "BossEscortType": "followerBoar",
+      "BossName": "bossBoar",
       "BossZone": null,
       "Supports": [
         {
           "BossEscortAmount": "4",
-          "BossEscortType": "followerboar"
+          "BossEscortType": "followerBoar"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose1"
+          "BossEscortType": "followerBoarClose1"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose2"
+          "BossEscortType": "followerBoarClose2"
         }
       ],
       "Time": -1
@@ -51,21 +51,21 @@
     {
       "BossChance": 11,
       "BossEscortAmount": "6",
-      "BossEscortType": "followerboar",
-      "BossName": "bossboar",
+      "BossEscortType": "followerBoar",
+      "BossName": "bossBoar",
       "BossZone": null,
       "Supports": [
         {
           "BossEscortAmount": "4",
-          "BossEscortType": "followerboar"
+          "BossEscortType": "followerBoar"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose1"
+          "BossEscortType": "followerBoarClose1"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose2"
+          "BossEscortType": "followerBoarClose2"
         }
       ],
       "Time": -1
@@ -75,21 +75,21 @@
     {
       "BossChance": 11,
       "BossEscortAmount": "6",
-      "BossEscortType": "followerboar",
-      "BossName": "bossboar",
+      "BossEscortType": "followerBoar",
+      "BossName": "bossBoar",
       "BossZone": null,
       "Supports": [
         {
           "BossEscortAmount": "4",
-          "BossEscortType": "followerboar"
+          "BossEscortType": "followerBoar"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose1"
+          "BossEscortType": "followerBoarClose1"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose2"
+          "BossEscortType": "followerBoarClose2"
         }
       ],
       "Time": -1
@@ -99,21 +99,21 @@
     {
       "BossChance": 11,
       "BossEscortAmount": "6",
-      "BossEscortType": "followerboar",
-      "BossName": "bossboar",
+      "BossEscortType": "followerBoar",
+      "BossName": "bossBoar",
       "BossZone": null,
       "Supports": [
         {
           "BossEscortAmount": "4",
-          "BossEscortType": "followerboar"
+          "BossEscortType": "followerBoar"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose1"
+          "BossEscortType": "followerBoarClose1"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose2"
+          "BossEscortType": "followerBoarClose2"
         }
       ],
       "Time": -1
@@ -123,21 +123,21 @@
     {
       "BossChance": 11,
       "BossEscortAmount": "6",
-      "BossEscortType": "followerboar",
-      "BossName": "bossboar",
+      "BossEscortType": "followerBoar",
+      "BossName": "bossBoar",
       "BossZone": null,
       "Supports": [
         {
           "BossEscortAmount": "4",
-          "BossEscortType": "followerboar"
+          "BossEscortType": "followerBoar"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose1"
+          "BossEscortType": "followerBoarClose1"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose2"
+          "BossEscortType": "followerBoarClose2"
         }
       ],
       "Time": -1
@@ -147,21 +147,21 @@
     {
       "BossChance": 11,
       "BossEscortAmount": "6",
-      "BossEscortType": "followerboar",
-      "BossName": "bossboar",
+      "BossEscortType": "followerBoar",
+      "BossName": "bossBoar",
       "BossZone": null,
       "Supports": [
         {
           "BossEscortAmount": "4",
-          "BossEscortType": "followerboar"
+          "BossEscortType": "followerBoar"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose1"
+          "BossEscortType": "followerBoarClose1"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose2"
+          "BossEscortType": "followerBoarClose2"
         }
       ],
       "Time": -1
@@ -171,21 +171,21 @@
     {
       "BossChance": 11,
       "BossEscortAmount": "6",
-      "BossEscortType": "followerboar",
-      "BossName": "bossboar",
+      "BossEscortType": "followerBoar",
+      "BossName": "bossBoar",
       "BossZone": null,
       "Supports": [
         {
           "BossEscortAmount": "4",
-          "BossEscortType": "followerboar"
+          "BossEscortType": "followerBoar"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose1"
+          "BossEscortType": "followerBoarClose1"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose2"
+          "BossEscortType": "followerBoarClose2"
         }
       ],
       "Time": -1
@@ -195,21 +195,21 @@
     {
       "BossChance": 11,
       "BossEscortAmount": "6",
-      "BossEscortType": "followerboar",
-      "BossName": "bossboar",
+      "BossEscortType": "followerBoar",
+      "BossName": "bossBoar",
       "BossZone": null,
       "Supports": [
         {
           "BossEscortAmount": "4",
-          "BossEscortType": "followerboar"
+          "BossEscortType": "followerBoar"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose1"
+          "BossEscortType": "followerBoarClose1"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose2"
+          "BossEscortType": "followerBoarClose2"
         }
       ],
       "Time": -1
@@ -219,21 +219,21 @@
     {
       "BossChance": 11,
       "BossEscortAmount": "6",
-      "BossEscortType": "followerboar",
-      "BossName": "bossboar",
+      "BossEscortType": "followerBoar",
+      "BossName": "bossBoar",
       "BossZone": null,
       "Supports": [
         {
           "BossEscortAmount": "4",
-          "BossEscortType": "followerboar"
+          "BossEscortType": "followerBoar"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose1"
+          "BossEscortType": "followerBoarClose1"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose2"
+          "BossEscortType": "followerBoarClose2"
         }
       ],
       "Time": -1
@@ -243,23 +243,23 @@
     {
       "BossChance": 11,
       "BossEscortAmount": "6",
-      "BossEscortType": "followerboar",
-      "BossName": "bossboar",
+      "BossEscortType": "followerBoar",
+      "BossName": "bossBoar",
       "BossZone": [
         "ZoneCarShowroom"
       ],
       "Supports": [
         {
           "BossEscortAmount": "4",
-          "BossEscortType": "followerboar"
+          "BossEscortType": "followerBoar"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose1"
+          "BossEscortType": "followerBoarClose1"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose2"
+          "BossEscortType": "followerBoarClose2"
         }
       ],
       "Time": -1
@@ -267,13 +267,13 @@
     {
       "BossChance": 100,
       "BossEscortAmount": "1,2",
-      "BossEscortType": "bossboarsniper",
-      "BossName": "bossboarsniper",
+      "BossEscortType": "bossBoarsniper",
+      "BossName": "bossBoarsniper",
       "BossZone": [
         "ZoneSnipeCarShowroom"
       ],
       "Time": 99999,
-      "TriggerId": "BossBoarBorn",
+      "TriggerId": "bossBoarBorn",
       "TriggerName": "botEvent"
     }
   ],
@@ -281,21 +281,21 @@
     {
       "BossChance": 11,
       "BossEscortAmount": "6",
-      "BossEscortType": "followerboar",
-      "BossName": "bossboar",
+      "BossEscortType": "followerBoar",
+      "BossName": "bossBoar",
       "BossZone": null,
       "Supports": [
         {
           "BossEscortAmount": "4",
-          "BossEscortType": "followerboar"
+          "BossEscortType": "followerBoar"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose1"
+          "BossEscortType": "followerBoarClose1"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerboarclose2"
+          "BossEscortType": "followerBoarClose2"
         }
       ],
       "Time": -1

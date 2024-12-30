@@ -3,9 +3,10 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerkojaniy",
-      "BossName": "bosskojaniy",
+      "BossEscortType": "followerKojaniy",
+      "BossName": "bossKojaniy",
       "BossZone": null,
+      "Supports": null,
       "Time": -1
     }
   ],
@@ -13,9 +14,10 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerkojaniy",
-      "BossName": "bosskojaniy",
+      "BossEscortType": "followerKojaniy",
+      "BossName": "bossKojaniy",
       "BossZone": null,
+      "Supports": null,
       "Time": -1
     }
   ],
@@ -23,9 +25,10 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerkojaniy",
-      "BossName": "bosskojaniy",
+      "BossEscortType": "followerKojaniy",
+      "BossName": "bossKojaniy",
       "BossZone": null,
+      "Supports": null,
       "Time": -1
     }
   ],
@@ -33,9 +36,10 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerkojaniy",
-      "BossName": "bosskojaniy",
+      "BossEscortType": "followerKojaniy",
+      "BossName": "bossKojaniy",
       "BossZone": null,
+      "Supports": null,
       "Time": -1
     }
   ],
@@ -43,9 +47,10 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerkojaniy",
-      "BossName": "bosskojaniy",
+      "BossEscortType": "followerKojaniy",
+      "BossName": "bossKojaniy",
       "BossZone": null,
+      "Supports": null,
       "Time": -1
     }
   ],
@@ -53,9 +58,10 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerkojaniy",
-      "BossName": "bosskojaniy",
+      "BossEscortType": "followerKojaniy",
+      "BossName": "bossKojaniy",
       "BossZone": null,
+      "Supports": null,
       "Time": -1
     }
   ],
@@ -63,9 +69,10 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerkojaniy",
-      "BossName": "bosskojaniy",
+      "BossEscortType": "followerKojaniy",
+      "BossName": "bossKojaniy",
       "BossZone": null,
+      "Supports": null,
       "Time": -1
     }
   ],
@@ -73,9 +80,10 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerkojaniy",
-      "BossName": "bosskojaniy",
+      "BossEscortType": "followerKojaniy",
+      "BossName": "bossKojaniy",
       "BossZone": null,
+      "Supports": null,
       "Time": -1
     }
   ],
@@ -83,9 +91,10 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerkojaniy",
-      "BossName": "bosskojaniy",
+      "BossEscortType": "followerKojaniy",
+      "BossName": "bossKojaniy",
       "BossZone": null,
+      "Supports": null,
       "Time": -1
     }
   ],
@@ -93,9 +102,10 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerkojaniy",
-      "BossName": "bosskojaniy",
+      "BossEscortType": "followerKojaniy",
+      "BossName": "bossKojaniy",
       "BossZone": null,
+      "Supports": null,
       "Time": -1
     }
   ],
@@ -103,9 +113,10 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerkojaniy",
-      "BossName": "bosskojaniy",
+      "BossEscortType": "followerKojaniy",
+      "BossName": "bossKojaniy",
       "BossZone": null,
+      "Supports": null,
       "Time": -1
     }
   ],
@@ -113,11 +124,12 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerkojaniy",
-      "BossName": "bosskojaniy",
+      "BossEscortType": "followerKojaniy",
+      "BossName": "bossKojaniy",
       "BossZone": [
         "ZoneWoodCutter"
       ],
+      "Supports": null,
       "Time": -1
     }
   ]

@@ -1,251 +1,254 @@
 {
   "customs": [
     {
-      "BossName": "bossknight",
       "BossChance": 15,
-      "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "exusec",
+      "BossEscortType": "exUsec",
+      "BossName": "bossKnight",
+      "BossZone": ["ZoneScavBase"],
+      "RandomTimeSpawn": true,
       "Supports": [
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbigpipe"
+          "BossEscortType": "followerBigPipe"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbirdeye"
+          "BossEscortType": "followerBirdEye"
         }
       ],
-      "BossZone": [
-        "ZoneScavBase"
-      ]
+      "Time": -1
     }
   ],
   "factory": [
     {
-      "BossName": "bossknight",
       "BossChance": 15,
-      "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "exusec",
+      "BossEscortType": "exUsec",
+      "BossName": "bossKnight",
+      "BossZone": null,
+      "RandomTimeSpawn": true,
       "Supports": [
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbigpipe"
+          "BossEscortType": "followerBigPipe"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbirdeye"
+          "BossEscortType": "followerBirdEye"
         }
       ],
-      "BossZone": null
+      "Time": -1
     }
   ],
   "factory_night": [
     {
-      "BossName": "bossknight",
       "BossChance": 15,
-      "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "exusec",
+      "BossEscortType": "exUsec",
+      "BossName": "bossKnight",
+      "BossZone": null,
+      "RandomTimeSpawn": true,
       "Supports": [
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbigpipe"
+          "BossEscortType": "followerBigPipe"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbirdeye"
+          "BossEscortType": "followerBirdEye"
         }
       ],
-      "BossZone": null
+      "Time": -1
     }
   ],
   "groundzero_high": [
     {
-      "BossName": "bossknight",
       "BossChance": 15,
-      "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "exusec",
+      "BossEscortType": "exUsec",
+      "BossName": "bossKnight",
+      "BossZone": null,
+      "RandomTimeSpawn": true,
       "Supports": [
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbigpipe"
+          "BossEscortType": "followerBigPipe"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbirdeye"
+          "BossEscortType": "followerBirdEye"
         }
       ],
-      "BossZone": null
+      "Time": -1
     }
   ],
   "groundzero": [
     {
-      "BossName": "bossknight",
       "BossChance": 15,
-      "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "exusec",
+      "BossEscortType": "exUsec",
+      "BossName": "bossKnight",
+      "BossZone": null,
+      "RandomTimeSpawn": true,
       "Supports": [
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbigpipe"
+          "BossEscortType": "followerBigPipe"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbirdeye"
+          "BossEscortType": "followerBirdEye"
         }
       ],
-      "BossZone": null
+      "Time": -1
     }
   ],
   "interchange": [
     {
-      "BossName": "bossknight",
       "BossChance": 15,
-      "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "exusec",
+      "BossEscortType": "exUsec",
+      "BossName": "bossKnight",
+      "BossZone": null,
+      "RandomTimeSpawn": true,
       "Supports": [
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbigpipe"
+          "BossEscortType": "followerBigPipe"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbirdeye"
+          "BossEscortType": "followerBirdEye"
         }
       ],
-      "BossZone": null
+      "Time": -1
     }
   ],
   "laboratory": [
     {
-      "BossName": "bossknight",
       "BossChance": 15,
-      "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "exusec",
+      "BossEscortType": "exUsec",
+      "BossName": "bossKnight",
+      "BossZone": null,
+      "RandomTimeSpawn": true,
       "Supports": [
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbigpipe"
+          "BossEscortType": "followerBigPipe"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbirdeye"
+          "BossEscortType": "followerBirdEye"
         }
       ],
-      "BossZone": null
+      "Time": -1
     }
   ],
   "lighthouse": [
     {
-      "BossName": "bossknight",
       "BossChance": 15,
-      "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "exusec",
+      "BossEscortType": "exUsec",
+      "BossName": "bossKnight",
+      "BossZone": ["Zone_Chalet", "Zone_TreatmentContainers"],
+      "RandomTimeSpawn": true,
       "Supports": [
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbigpipe"
+          "BossEscortType": "followerBigPipe"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbirdeye"
+          "BossEscortType": "followerBirdEye"
         }
       ],
-      "BossZone": [
-        "Zone_Chalet",
-        "Zone_TreatmentContainers"
-      ]
+      "Time": -1
     }
   ],
   "reserve": [
     {
-      "BossName": "bossknight",
       "BossChance": 15,
-      "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "exusec",
+      "BossEscortType": "exUsec",
+      "BossName": "bossKnight",
+      "BossZone": null,
+      "RandomTimeSpawn": true,
       "Supports": [
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbigpipe"
+          "BossEscortType": "followerBigPipe"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbirdeye"
+          "BossEscortType": "followerBirdEye"
         }
       ],
-      "BossZone": null
+      "Time": -1
     }
   ],
   "shoreline": [
     {
-      "BossName": "bossknight",
       "BossChance": 5,
-      "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "exusec",
+      "BossEscortType": "exUsec",
+      "BossName": "bossKnight",
+      "BossZone": ["ZoneMeteoStation"],
+      "RandomTimeSpawn": true,
       "Supports": [
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbigpipe"
+          "BossEscortType": "followerBigPipe"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbirdeye"
+          "BossEscortType": "followerBirdEye"
         }
       ],
-      "BossZone": [
-        "ZoneMeteoStation"
-      ]
+      "Time": -1
     }
   ],
   "streets": [
     {
-      "BossName": "bossknight",
       "BossChance": 15,
-      "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "exusec",
+      "BossEscortType": "exUsec",
+      "BossName": "bossKnight",
+      "BossZone": null,
+      "RandomTimeSpawn": true,
       "Supports": [
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbigpipe"
+          "BossEscortType": "followerBigPipe"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbirdeye"
+          "BossEscortType": "followerBirdEye"
         }
       ],
-      "BossZone": null
+      "Time": -1
     }
   ],
   "woods": [
     {
-      "BossName": "bossknight",
       "BossChance": 20,
-      "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "exusec",
+      "BossEscortType": "exUsec",
+      "BossName": "bossKnight",
+      "BossZone": ["ZoneScavBase2"],
+      "RandomTimeSpawn": true,
       "Supports": [
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbigpipe"
+          "BossEscortType": "followerBigPipe"
         },
         {
           "BossEscortAmount": "1",
-          "BossEscortType": "followerbirdeye"
+          "BossEscortType": "followerBirdEye"
         }
       ],
-      "BossZone": [
-        "ZoneScavBase2"
-      ]
+      "Time": -1
     }
   ]
 }

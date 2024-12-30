@@ -3,9 +3,10 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerbully",
-      "BossName": "bosstagilla",
+      "BossEscortType": "followerBully",
+      "BossName": "bossTagilla",
       "BossZone": null,
+      "Supports": null,
       "Time": -1
     }
   ],
@@ -13,11 +14,12 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerbully",
-      "BossName": "bosstagilla",
+      "BossEscortType": "followerBully",
+      "BossName": "bossTagilla",
       "BossZone": [
         "BotZone"
       ],
+      "Supports": null,
       "Time": -1
     }
   ],
@@ -25,11 +27,12 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerbully",
-      "BossName": "bosstagilla",
+      "BossEscortType": "followerBully",
+      "BossName": "bossTagilla",
       "BossZone": [
         "BotZone"
       ],
+      "Supports": null,
       "Time": -1
     }
   ],
@@ -37,9 +40,10 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerbully",
-      "BossName": "bosstagilla",
+      "BossEscortType": "followerBully",
+      "BossName": "bossTagilla",
       "BossZone": null,
+      "Supports": null,
       "Time": -1
     }
   ],
@@ -47,9 +51,10 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerbully",
-      "BossName": "bosstagilla",
+      "BossEscortType": "followerBully",
+      "BossName": "bossTagilla",
       "BossZone": null,
+      "Supports": null,
       "Time": -1
     }
   ],
@@ -57,9 +62,10 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerbully",
-      "BossName": "bosstagilla",
+      "BossEscortType": "followerBully",
+      "BossName": "bossTagilla",
       "BossZone": null,
+      "Supports": null,
       "Time": -1
     }
   ],
@@ -67,9 +73,10 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerbully",
-      "BossName": "bosstagilla",
+      "BossEscortType": "followerBully",
+      "BossName": "bossTagilla",
       "BossZone": null,
+      "Supports": null,
       "Time": -1
     }
   ],
@@ -77,9 +84,10 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerbully",
-      "BossName": "bosstagilla",
+      "BossEscortType": "followerBully",
+      "BossName": "bossTagilla",
       "BossZone": null,
+      "Supports": null,
       "Time": -1
     }
   ],
@@ -87,9 +95,10 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerbully",
-      "BossName": "bosstagilla",
+      "BossEscortType": "followerBully",
+      "BossName": "bossTagilla",
       "BossZone": null,
+      "Supports": null,
       "Time": -1
     }
   ],
@@ -97,9 +106,10 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerbully",
-      "BossName": "bosstagilla",
+      "BossEscortType": "followerBully",
+      "BossName": "bossTagilla",
       "BossZone": null,
+      "Supports": null,
       "Time": -1
     }
   ],
@@ -107,9 +117,10 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerbully",
-      "BossName": "bosstagilla",
+      "BossEscortType": "followerBully",
+      "BossName": "bossTagilla",
       "BossZone": null,
+      "Supports": null,
       "Time": -1
     }
   ],
@@ -117,9 +128,10 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerbully",
-      "BossName": "bosstagilla",
+      "BossEscortType": "followerBully",
+      "BossName": "bossTagilla",
       "BossZone": null,
+      "Supports": null,
       "Time": -1
     }
   ]
