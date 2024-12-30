@@ -1,8 +1,6 @@
 # IMPORTANT
 # PLEASE READ THE MOD PAGE FOR THE MOST UP TO DATE INFORMATION!
 # tbh I hardly update this so please check the mod page for info/faq/questions!
-#
-#
 
 # SWAG + Donuts
 ![Version: 3.5.3](https://img.shields.io/badge/Version-3.5.3-informational?style=flat-square)
