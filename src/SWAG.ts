@@ -169,45 +169,41 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
 
         staticRouterModService.registerStaticRouter(
             `${modName}/client/match/offline/end`,
-            [
+            [{
+                url: "/client/match/offline/end",
+                action: async (
+                    url: string,
+                    info: any,
+                    sessionID: string,
+                    output: string
+                ): Promise<any> =>
                 {
-                    url: "/client/match/offline/end",
-                    action: async (
-                        url: string,
-                        info: any,
-                        sessionID: string,
-                        output: string
-                    ): Promise<any> => 
-                    {
-                        sessionId = sessionID;
-                        SWAG.clearDefaultSpawns();
-                        SWAG.configureMaps();
-                        return locationCallbacks.getLocationData(url, info, sessionID);
-                    }
+                    sessionId = sessionID;
+                    SWAG.clearDefaultSpawns();
+                    SWAG.configureMaps();
+                    return locationCallbacks.getLocationData(url, info, sessionID);
                 }
-            ],
+            }],
             "SWAG"
         );
 
         staticRouterModService.registerStaticRouter(
             `${modName}/client/locations`,
-            [
+            [{
+                url: "/client/locations",
+                action: async (
+                    url: string,
+                    info: any,
+                    sessionID: string,
+                    output: string
+                ): Promise<any> =>
                 {
-                    url: "/client/locations",
-                    action: async (
-                        url: string,
-                        info: any,
-                        sessionID: string,
-                        output: string
-                    ): Promise<any> => 
-                    {
-                        sessionId = sessionID;
-                        SWAG.clearDefaultSpawns();
-                        SWAG.configureMaps();
-                        return locationCallbacks.getLocationData(url, info, sessionID);
-                    }
+                    sessionId = sessionID;
+                    SWAG.clearDefaultSpawns();
+                    SWAG.configureMaps();
+                    return locationCallbacks.getLocationData(url, info, sessionID);
                 }
-            ],
+            }],
             "SWAG"
         );
 
@@ -238,7 +234,6 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                     // disable more vanilla spawn stuff
                     locationConfig.splitWaveIntoSingleSpawnsSettings.enabled = false;
                     locationConfig.rogueLighthouseSpawnTimeSettings.enabled = false;
-                    //locationConfig.fixEmptyBotWavesSettings.enabled = false;
                     locationConfig.addOpenZonesToAllMaps = false;
                     locationConfig.addCustomBotWavesToMaps = false;
                     locationConfig.enableBotTypeLimits = false;
@@ -267,8 +262,9 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                     try 
                     {
                         // Retrieve configurations
-                        const botConfig = container.resolve<ConfigServer>("ConfigServer").getConfig<IBotConfig>(ConfigTypes.BOT);
-                        const pmcConfig = container.resolve<ConfigServer>("ConfigServer").getConfig<IPmcConfig>(ConfigTypes.PMC);
+                        const configServer = container.resolve<ConfigServer>("ConfigServer");
+                        const botConfig = configServer.getConfig<IBotConfig>(ConfigTypes.BOT);
+                        const pmcConfig = configServer.getConfig<IPmcConfig>(ConfigTypes.PMC);
 
                         // Disable PMC conversion
                         const conversionTypes = ["assault", "cursedassault", "pmcbot", "exusec", "arenafighter", "arenafighterevent", "crazyassaultevent"];
@@ -294,6 +290,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                         let realTime = time;
                         if (matchInfoStartOff.timeVariant === "PAST") 
                         {
+                            // eslint-disable-next-line prefer-const
                             let [hours, minutes] = time.split(":").map(Number);
                             hours = (hours - 12 + 24) % 24; // Adjust time backwards by 12 hours and ensure it wraps correctly
                             realTime = `${hours}:${minutes}`;
@@ -421,7 +418,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                 {
 
                     // ignore boarsniper
-                    if (boss.BossName == "bossboarsniper") 
+                    if (boss.BossName == "bossboarsniper")
                     {
                         return false;
                     }
@@ -446,7 +443,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                     otherConfigs[mapKey] = [];
                 }
 
-                const filteredBosses = data[mapKey].filter(boss => 
+                const filteredBosses = data[mapKey].filter(boss =>
                 {
                     const bossType = reverseBossNames[boss.BossName];
 
@@ -504,32 +501,23 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
 
         validMaps.forEach((globalmap: LocationName) => 
         {
-            if (bossConfigs[reverseMapNames[globalmap]]) 
+            bossConfigs[reverseMapNames[globalmap]]?.forEach(boss =>
             {
-                bossConfigs[reverseMapNames[globalmap]].forEach(boss => 
-                {
-                    SWAG.spawnBosses(boss, globalmap);
-                    SWAG.bossCount.count += 1;
-                });
-            }
+                SWAG.spawnBosses(boss, globalmap);
+                SWAG.bossCount.count += 1;
+            });
             // reset boss count for the next map
             SWAG.bossCount.count = 0;
 
-            if (otherConfigs[reverseMapNames[globalmap]]) 
+            otherConfigs[reverseMapNames[globalmap]]?.forEach(spawn =>
             {
-                otherConfigs[reverseMapNames[globalmap]].forEach(spawn => 
-                {
-                    SWAG.spawnBots(spawn, globalmap);
-                });
-            }
+                SWAG.spawnBots(spawn, globalmap);
+            });
 
-            if (customConfigs[reverseMapNames[globalmap]]) 
+            customConfigs[reverseMapNames[globalmap]]?.forEach(custom =>
             {
-                customConfigs[reverseMapNames[globalmap]].forEach(custom => 
-                {
-                    SWAG.spawnCustom(custom, globalmap);
-                });
-            }
+                SWAG.spawnCustom(custom, globalmap);
+            });
 
             logger.warning(`SWAG: Configured boss spawns for map ${globalmap}`);
         });
