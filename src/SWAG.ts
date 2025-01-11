@@ -264,6 +264,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                     try 
                     {
                         const pmcConfig = container.resolve("ConfigServer").getConfig("spt-pmc");
+                        const botConfig = container.resolve<ConfigServer>("ConfigServer").getConfig<IBotConfig>(ConfigTypes.BOT);
                         const { convertIntoPmcChance } = pmcConfig;
                         Object.entries(convertIntoPmcChance).forEach(([mapKey, map]) => {
                             Object.entries(map).forEach(([roleKey, role]) => {
@@ -307,14 +308,14 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                         {
                             Object.keys(config.MaxBotCap).forEach(key => 
                             {
-                                IBotConfig.maxBotCap[key] = config.MaxBotCap[key];
+                                botConfig.maxBotCap[key] = config.MaxBotCap[key];
                             });
                         }
                         else 
                         { // "night"
                             Object.keys(config.NightMaxBotCap).forEach(key => 
                             {
-                                IBotConfig.maxBotCap[key] = config.NightMaxBotCap[key];
+                                botConfig.maxBotCap[key] = config.NightMaxBotCap[key];
                             });
                         }
                         logger.info(`SWAG: ${TOD} Raid Max Bot Caps set`);
