@@ -3,21 +3,21 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerGluharSecurity",
-      "BossName": "bossGluhar",
+      "BossEscortType": "followergluharsecurity",
+      "BossName": "bossgluhar",
       "BossZone": null,
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharAssault"
+          "BossEscortType": "followergluharassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharSecurity"
+          "BossEscortType": "followergluharsecurity"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "Time": -1
@@ -27,21 +27,21 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerGluharSecurity",
-      "BossName": "bossGluhar",
+      "BossEscortType": "followergluharsecurity",
+      "BossName": "bossgluhar",
       "BossZone": null,
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharAssault"
+          "BossEscortType": "followergluharassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharSecurity"
+          "BossEscortType": "followergluharsecurity"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "Time": -1
@@ -51,21 +51,21 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerGluharSecurity",
-      "BossName": "bossGluhar",
+      "BossEscortType": "followergluharsecurity",
+      "BossName": "bossgluhar",
       "BossZone": null,
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharAssault"
+          "BossEscortType": "followergluharassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharSecurity"
+          "BossEscortType": "followergluharsecurity"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "Time": -1
@@ -75,21 +75,21 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerGluharSecurity",
-      "BossName": "bossGluhar",
+      "BossEscortType": "followergluharsecurity",
+      "BossName": "bossgluhar",
       "BossZone": null,
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharAssault"
+          "BossEscortType": "followergluharassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharSecurity"
+          "BossEscortType": "followergluharsecurity"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "Time": -1
@@ -99,21 +99,21 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerGluharSecurity",
-      "BossName": "bossGluhar",
+      "BossEscortType": "followergluharsecurity",
+      "BossName": "bossgluhar",
       "BossZone": null,
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharAssault"
+          "BossEscortType": "followergluharassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharSecurity"
+          "BossEscortType": "followergluharsecurity"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "Time": -1
@@ -123,21 +123,21 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerGluharSecurity",
-      "BossName": "bossGluhar",
+      "BossEscortType": "followergluharsecurity",
+      "BossName": "bossgluhar",
       "BossZone": null,
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharAssault"
+          "BossEscortType": "followergluharassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharSecurity"
+          "BossEscortType": "followergluharsecurity"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "Time": -1
@@ -147,21 +147,21 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerGluharSecurity",
-      "BossName": "bossGluhar",
+      "BossEscortType": "followergluharsecurity",
+      "BossName": "bossgluhar",
       "BossZone": null,
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharAssault"
+          "BossEscortType": "followergluharassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharSecurity"
+          "BossEscortType": "followergluharsecurity"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "Time": -1
@@ -171,21 +171,21 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerGluharSecurity",
-      "BossName": "bossGluhar",
+      "BossEscortType": "followergluharsecurity",
+      "BossName": "bossgluhar",
       "BossZone": null,
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharAssault"
+          "BossEscortType": "followergluharassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharSecurity"
+          "BossEscortType": "followergluharsecurity"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "Time": -1
@@ -195,8 +195,8 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerGluharSecurity",
-      "BossName": "bossGluhar",
+      "BossEscortType": "followergluharsecurity",
+      "BossName": "bossgluhar",
       "BossZone": [
         "ZoneRailStrorage",
         "ZonePTOR2",
@@ -205,15 +205,15 @@
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharAssault"
+          "BossEscortType": "followergluharassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharSecurity"
+          "BossEscortType": "followergluharsecurity"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "Time": -1
@@ -223,21 +223,21 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerGluharSecurity",
-      "BossName": "bossGluhar",
+      "BossEscortType": "followergluharsecurity",
+      "BossName": "bossgluhar",
       "BossZone": null,
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharAssault"
+          "BossEscortType": "followergluharassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharSecurity"
+          "BossEscortType": "followergluharsecurity"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "Time": -1
@@ -247,21 +247,21 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerGluharSecurity",
-      "BossName": "bossGluhar",
+      "BossEscortType": "followergluharsecurity",
+      "BossName": "bossgluhar",
       "BossZone": null,
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharAssault"
+          "BossEscortType": "followergluharassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharSecurity"
+          "BossEscortType": "followergluharsecurity"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "Time": -1
@@ -271,21 +271,21 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerGluharSecurity",
-      "BossName": "bossGluhar",
+      "BossEscortType": "followergluharsecurity",
+      "BossName": "bossgluhar",
       "BossZone": null,
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharAssault"
+          "BossEscortType": "followergluharassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharSecurity"
+          "BossEscortType": "followergluharsecurity"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "Time": -1

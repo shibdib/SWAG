@@ -3,8 +3,8 @@
     {
       "BossChance": 0,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerZryachiy",
-      "BossName": "bossZryachiy",
+      "BossEscortType": "followerzryachiy",
+      "BossName": "bosszryachiy",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -14,8 +14,8 @@
     {
       "BossChance": 0,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerZryachiy",
-      "BossName": "bossZryachiy",
+      "BossEscortType": "followerzryachiy",
+      "BossName": "bosszryachiy",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -25,8 +25,8 @@
     {
       "BossChance": 0,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerZryachiy",
-      "BossName": "bossZryachiy",
+      "BossEscortType": "followerzryachiy",
+      "BossName": "bosszryachiy",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -36,8 +36,8 @@
     {
       "BossChance": 0,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerZryachiy",
-      "BossName": "bossZryachiy",
+      "BossEscortType": "followerzryachiy",
+      "BossName": "bosszryachiy",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -47,8 +47,8 @@
     {
       "BossChance": 0,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerZryachiy",
-      "BossName": "bossZryachiy",
+      "BossEscortType": "followerzryachiy",
+      "BossName": "bosszryachiy",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -58,8 +58,8 @@
     {
       "BossChance": 0,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerZryachiy",
-      "BossName": "bossZryachiy",
+      "BossEscortType": "followerzryachiy",
+      "BossName": "bosszryachiy",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -69,8 +69,8 @@
     {
       "BossChance": 0,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerZryachiy",
-      "BossName": "bossZryachiy",
+      "BossEscortType": "followerzryachiy",
+      "BossName": "bosszryachiy",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -80,8 +80,8 @@
     {
       "BossChance": 100,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerZryachiy",
-      "BossName": "bossZryachiy",
+      "BossEscortType": "followerzryachiy",
+      "BossName": "bosszryachiy",
       "BossZone": [
         "Zone_Island"
       ],
@@ -93,8 +93,8 @@
     {
       "BossChance": 0,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerZryachiy",
-      "BossName": "bossZryachiy",
+      "BossEscortType": "followerzryachiy",
+      "BossName": "bosszryachiy",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -104,8 +104,8 @@
     {
       "BossChance": 0,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerZryachiy",
-      "BossName": "bossZryachiy",
+      "BossEscortType": "followerzryachiy",
+      "BossName": "bosszryachiy",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -115,8 +115,8 @@
     {
       "BossChance": 0,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerZryachiy",
-      "BossName": "bossZryachiy",
+      "BossEscortType": "followerzryachiy",
+      "BossName": "bosszryachiy",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -126,8 +126,8 @@
     {
       "BossChance": 0,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerZryachiy",
-      "BossName": "bossZryachiy",
+      "BossEscortType": "followerzryachiy",
+      "BossName": "bosszryachiy",
       "BossZone": null,
       "Supports": null,
       "Time": -1

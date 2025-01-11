@@ -3,8 +3,8 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerTagilla",
-      "BossName": "bossKilla",
+      "BossEscortType": "followertagilla",
+      "BossName": "bosskilla",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -14,8 +14,8 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerTagilla",
-      "BossName": "bossKilla",
+      "BossEscortType": "followertagilla",
+      "BossName": "bosskilla",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -25,8 +25,8 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerTagilla",
-      "BossName": "bossKilla",
+      "BossEscortType": "followertagilla",
+      "BossName": "bosskilla",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -36,8 +36,8 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerTagilla",
-      "BossName": "bossKilla",
+      "BossEscortType": "followertagilla",
+      "BossName": "bosskilla",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -47,8 +47,8 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerTagilla",
-      "BossName": "bossKilla",
+      "BossEscortType": "followertagilla",
+      "BossName": "bosskilla",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -58,8 +58,8 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerTagilla",
-      "BossName": "bossKilla",
+      "BossEscortType": "followertagilla",
+      "BossName": "bosskilla",
       "BossZone": [
         "ZoneCenterBot",
         "ZoneCenter",
@@ -75,8 +75,8 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerTagilla",
-      "BossName": "bossKilla",
+      "BossEscortType": "followertagilla",
+      "BossName": "bosskilla",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -86,8 +86,8 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerTagilla",
-      "BossName": "bossKilla",
+      "BossEscortType": "followertagilla",
+      "BossName": "bosskilla",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -97,8 +97,8 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerTagilla",
-      "BossName": "bossKilla",
+      "BossEscortType": "followertagilla",
+      "BossName": "bosskilla",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -108,8 +108,8 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerTagilla",
-      "BossName": "bossKilla",
+      "BossEscortType": "followertagilla",
+      "BossName": "bosskilla",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -119,8 +119,8 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerTagilla",
-      "BossName": "bossKilla",
+      "BossEscortType": "followertagilla",
+      "BossName": "bosskilla",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -130,8 +130,8 @@
     {
       "BossChance": 30,
       "BossEscortAmount": "0",
-      "BossEscortType": "followerTagilla",
-      "BossName": "bossKilla",
+      "BossEscortType": "followertagilla",
+      "BossName": "bosskilla",
       "BossZone": null,
       "Supports": null,
       "Time": -1

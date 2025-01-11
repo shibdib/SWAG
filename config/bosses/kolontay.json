@@ -1,23 +1,23 @@
 {
   "customs": [
     {
-      "BossName": "bossKolontay",
+      "BossName": "bosskolontay",
       "BossChance": 35,
       "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerKolontaySecurity",
+      "BossEscortType": "followerkolontaysecurity",
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontayAssault"
+          "BossEscortType": "followerkolontayassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontaySecurity"
+          "BossEscortType": "followerkolontaysecurity"
         },
         {
           "BossEscortAmount": "0",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "BossZone": null
@@ -25,23 +25,23 @@
   ],
   "factory": [
     {
-      "BossName": "bossKolontay",
+      "BossName": "bosskolontay",
       "BossChance": 35,
       "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerKolontaySecurity",
+      "BossEscortType": "followerkolontaysecurity",
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontayAssault"
+          "BossEscortType": "followerkolontayassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontaySecurity"
+          "BossEscortType": "followerkolontaysecurity"
         },
         {
           "BossEscortAmount": "0",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "BossZone": null
@@ -49,23 +49,23 @@
   ],
   "factory_night": [
     {
-      "BossName": "bossKolontay",
+      "BossName": "bosskolontay",
       "BossChance": 35,
       "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerKolontaySecurity",
+      "BossEscortType": "followerkolontaysecurity",
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontayAssault"
+          "BossEscortType": "followerkolontayassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontaySecurity"
+          "BossEscortType": "followerkolontaysecurity"
         },
         {
           "BossEscortAmount": "0",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "BossZone": null
@@ -73,23 +73,23 @@
   ],
   "groundzero": [
     {
-      "BossName": "bossKolontay",
+      "BossName": "bosskolontay",
       "BossChance": 35,
       "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerKolontaySecurity",
+      "BossEscortType": "followerkolontaysecurity",
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontayAssault"
+          "BossEscortType": "followerkolontayassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontaySecurity"
+          "BossEscortType": "followerkolontaysecurity"
         },
         {
           "BossEscortAmount": "0",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "BossZone": null
@@ -97,23 +97,23 @@
   ],
   "groundzero_high": [
     {
-      "BossName": "bossKolontay",
+      "BossName": "bosskolontay",
       "BossChance": 35,
       "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerKolontaySecurity",
+      "BossEscortType": "followerkolontaysecurity",
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontayAssault"
+          "BossEscortType": "followerkolontayassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontaySecurity"
+          "BossEscortType": "followerkolontaysecurity"
         },
         {
           "BossEscortAmount": "0",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "BossZone": null
@@ -121,23 +121,23 @@
   ],
   "interchange": [
     {
-      "BossName": "bossKolontay",
+      "BossName": "bosskolontay",
       "BossChance": 35,
       "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerKolontaySecurity",
+      "BossEscortType": "followerkolontaysecurity",
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontayAssault"
+          "BossEscortType": "followerkolontayassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontaySecurity"
+          "BossEscortType": "followerkolontaysecurity"
         },
         {
           "BossEscortAmount": "0",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "BossZone": null
@@ -145,23 +145,23 @@
   ],
   "laboratory": [
     {
-      "BossName": "bossKolontay",
+      "BossName": "bosskolontay",
       "BossChance": 35,
       "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerKolontaySecurity",
+      "BossEscortType": "followerkolontaysecurity",
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontayAssault"
+          "BossEscortType": "followerkolontayassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontaySecurity"
+          "BossEscortType": "followerkolontaysecurity"
         },
         {
           "BossEscortAmount": "0",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "BossZone": null
@@ -169,23 +169,23 @@
   ],
   "lighthouse": [
     {
-      "BossName": "bossKolontay",
+      "BossName": "bosskolontay",
       "BossChance": 35,
       "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerKolontaySecurity",
+      "BossEscortType": "followerkolontaysecurity",
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontayAssault"
+          "BossEscortType": "followerkolontayassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontaySecurity"
+          "BossEscortType": "followerkolontaysecurity"
         },
         {
           "BossEscortAmount": "0",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "BossZone": null
@@ -193,23 +193,23 @@
   ],
   "reserve": [
     {
-      "BossName": "bossKolontay",
+      "BossName": "bosskolontay",
       "BossChance": 35,
       "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerKolontaySecurity",
+      "BossEscortType": "followerkolontaysecurity",
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontayAssault"
+          "BossEscortType": "followerkolontayassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontaySecurity"
+          "BossEscortType": "followerkolontaysecurity"
         },
         {
           "BossEscortAmount": "0",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "BossZone": null
@@ -217,23 +217,23 @@
   ],
   "shoreline": [
     {
-      "BossName": "bossKolontay",
+      "BossName": "bosskolontay",
       "BossChance": 35,
       "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerKolontaySecurity",
+      "BossEscortType": "followerkolontaysecurity",
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontayAssault"
+          "BossEscortType": "followerkolontayassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontaySecurity"
+          "BossEscortType": "followerkolontaysecurity"
         },
         {
           "BossEscortAmount": "0",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "BossZone": null
@@ -241,23 +241,23 @@
   ],
   "streets": [
     {
-      "BossName": "bossKolontay",
+      "BossName": "bosskolontay",
       "BossChance": 35,
       "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerKolontaySecurity",
+      "BossEscortType": "followerkolontaysecurity",
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontayAssault"
+          "BossEscortType": "followerkolontayassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontaySecurity"
+          "BossEscortType": "followerkolontaysecurity"
         },
         {
           "BossEscortAmount": "0",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "BossZone": [
@@ -268,23 +268,23 @@
   ],
   "woods": [
     {
-      "BossName": "bossKolontay",
+      "BossName": "bosskolontay",
       "BossChance": 35,
       "Time": -1,
       "BossEscortAmount": "2",
-      "BossEscortType": "followerKolontaySecurity",
+      "BossEscortType": "followerkolontaysecurity",
       "Supports": [
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontayAssault"
+          "BossEscortType": "followerkolontayassault"
         },
         {
           "BossEscortAmount": "2",
-          "BossEscortType": "followerKolontaySecurity"
+          "BossEscortType": "followerkolontaysecurity"
         },
         {
           "BossEscortAmount": "0",
-          "BossEscortType": "followerGluharScout"
+          "BossEscortType": "followergluharscout"
         }
       ],
       "BossZone": null

@@ -3,8 +3,8 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "4",
-      "BossEscortType": "followerBully",
-      "BossName": "bossBully",
+      "BossEscortType": "followerbully",
+      "BossName": "bossbully",
       "BossZone": [
         "ZoneDormitory",
         "ZoneGasStation"
@@ -17,8 +17,8 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "4",
-      "BossEscortType": "followerBully",
-      "BossName": "bossBully",
+      "BossEscortType": "followerbully",
+      "BossName": "bossbully",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -28,8 +28,8 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "4",
-      "BossEscortType": "followerBully",
-      "BossName": "bossBully",
+      "BossEscortType": "followerbully",
+      "BossName": "bossbully",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -39,8 +39,8 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "4",
-      "BossEscortType": "followerBully",
-      "BossName": "bossBully",
+      "BossEscortType": "followerbully",
+      "BossName": "bossbully",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -50,8 +50,8 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "4",
-      "BossEscortType": "followerBully",
-      "BossName": "bossBully",
+      "BossEscortType": "followerbully",
+      "BossName": "bossbully",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -61,8 +61,8 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "4",
-      "BossEscortType": "followerBully",
-      "BossName": "bossBully",
+      "BossEscortType": "followerbully",
+      "BossName": "bossbully",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -72,8 +72,8 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "4",
-      "BossEscortType": "followerBully",
-      "BossName": "bossBully",
+      "BossEscortType": "followerbully",
+      "BossName": "bossbully",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -83,8 +83,8 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "4",
-      "BossEscortType": "followerBully",
-      "BossName": "bossBully",
+      "BossEscortType": "followerbully",
+      "BossName": "bossbully",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -94,8 +94,8 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "4",
-      "BossEscortType": "followerBully",
-      "BossName": "bossBully",
+      "BossEscortType": "followerbully",
+      "BossName": "bossbully",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -105,8 +105,8 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "4",
-      "BossEscortType": "followerBully",
-      "BossName": "bossBully",
+      "BossEscortType": "followerbully",
+      "BossName": "bossbully",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -116,8 +116,8 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "4",
-      "BossEscortType": "followerBully",
-      "BossName": "bossBully",
+      "BossEscortType": "followerbully",
+      "BossName": "bossbully",
       "BossZone": null,
       "Supports": null,
       "Time": -1
@@ -127,8 +127,8 @@
     {
       "BossChance": 35,
       "BossEscortAmount": "4",
-      "BossEscortType": "followerBully",
-      "BossName": "bossBully",
+      "BossEscortType": "followerbully",
+      "BossName": "bossbully",
       "BossZone": null,
       "Supports": null,
       "Time": -1
