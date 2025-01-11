@@ -263,8 +263,8 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                 {
                     try 
                     {
-                        const pmcConfig = container.resolve("ConfigServer").getConfig("spt-pmc");
                         const botConfig = container.resolve<ConfigServer>("ConfigServer").getConfig<IBotConfig>(ConfigTypes.BOT);
+                        const pmcConfig = container.resolve<ConfigServer>("ConfigServer").getConfig<IBotConfig>(ConfigTypes.PMC);
                         const { convertIntoPmcChance } = pmcConfig;
                         Object.entries(convertIntoPmcChance).forEach(([mapKey, map]) => {
                             Object.entries(map).forEach(([roleKey, role]) => {
