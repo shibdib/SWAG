@@ -152,8 +152,22 @@
       "shoreline": 0,
       "streets": 0,
       "woods": 0
+    },
+    "partisan": {
+      "customs": 15,
+      "factory": 0,
+      "factory_night": 0,
+      "groundzero": 0,
+      "groundzero_high": 0,
+      "interchange": 0,
+      "laboratory": 0,
+      "lighthouse": 15,
+      "reserve": 0,
+      "shoreline": 15,
+      "streets": 0,
+      "woods": 15
     }
-	},
+  },
   "CustomBosses": {
     "santa": {
 			"enabled": true,
