@@ -168,9 +168,9 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
         );
 
         staticRouterModService.registerStaticRouter(
-            `${modName}/client/match/offline/end`,
+            `${modName}/client/match/local/end`,
             [{
-                url: "/client/match/offline/end",
+                url: "/client/match/local/end",
                 action: async (
                     url: string,
                     info: any,
