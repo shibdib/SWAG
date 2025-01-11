@@ -263,22 +263,12 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                 {
                     try 
                     {
-                        // Retrieve configurations
-                        const configServer = container.resolve<ConfigServer>("ConfigServer");
-                        const botConfig = configServer.getConfig<IBotConfig>(ConfigTypes.BOT);
-                        const pmcConfig = configServer.getConfig<IPmcConfig>(ConfigTypes.PMC);
-
-                        // Disable PMC conversion
-                        const conversionTypes = ["assault", "cursedassault", "pmcbot", "exusec", "arenafighter", "arenafighterevent", "crazyassaultevent"];
-                        validMaps.forEach(location =>
-                        {
-                            conversionTypes.forEach(botType =>
-                            {
-                                const mapPmcChances = pmcConfig.convertIntoPmcChance[location];
-                                if (mapPmcChances)
-                                {
-                                    mapPmcChances[botType] = { min: 0, max: 0 };
-                                }
+                        const pmcConfig = container.resolve("ConfigServer").getConfig("spt-pmc");
+                        const { convertIntoPmcChance } = pmcConfig;
+                        Object.entries(convertIntoPmcChance).forEach(([mapKey, map]) => {
+                            Object.entries(map).forEach(([roleKey, role]) => {
+                                role.min = 0;
+                                role.max = 0;
                             });
                         });
                         logger.info("SWAG: PMC conversion is OFF (this is good - be sure this loads AFTER Realism/SVM)");
@@ -317,14 +307,14 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                         {
                             Object.keys(config.MaxBotCap).forEach(key => 
                             {
-                                botConfig.maxBotCap[key] = config.MaxBotCap[key];
+                                IBotConfig.maxBotCap[key] = config.MaxBotCap[key];
                             });
                         }
                         else 
                         { // "night"
                             Object.keys(config.NightMaxBotCap).forEach(key => 
                             {
-                                botConfig.maxBotCap[key] = config.NightMaxBotCap[key];
+                                IBotConfig.maxBotCap[key] = config.NightMaxBotCap[key];
                             });
                         }
                         logger.info(`SWAG: ${TOD} Raid Max Bot Caps set`);
@@ -819,7 +809,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
             )
             {
                 locations[map].base.BossLocationSpawn = [];
-                return;
+                continue;
             }
 
             // Remove Default Boss Spawns
