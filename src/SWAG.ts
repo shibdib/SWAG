@@ -53,6 +53,7 @@ import sanitar from "../config/bosses/sanitar.json";
 import shturman from "../config/bosses/shturman.json";
 import tagilla from "../config/bosses/tagilla.json";
 import zryachiy from "../config/bosses/zryachiy.json";
+import partisan from "../config/bosses/partisan.json";
 
 // Spawn Configs
 import bloodhounds from "../config/other/bloodhounds.json";
@@ -83,7 +84,8 @@ const bossSpawnConfigs = [
     sanitar,
     shturman,
     tagilla,
-    zryachiy
+    zryachiy,
+    partisan
 ];
 
 const customSpawnConfigs = [
