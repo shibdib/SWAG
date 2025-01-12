@@ -230,7 +230,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                         !config?.UseDefaultSpawns?.TriggeredWaves
                     ) 
                     {
-                        SWAG.disableSpawnSystems();
+                        SWAG.disableSpawnSystems(container);
                     }
 
                     // disable more vanilla spawn stuff
@@ -239,10 +239,6 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                     locationConfig.addOpenZonesToAllMaps = false;
                     locationConfig.addCustomBotWavesToMaps = false;
                     locationConfig.enableBotTypeLimits = false;
-
-                    logger.info(
-                        "SWAG: Vanilla spawn systems disabled"
-                    );
 
                     return output;
                 }
@@ -511,8 +507,6 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
             {
                 SWAG.spawnCustom(custom, globalmap);
             });
-
-            logger.warning(`SWAG: Configured boss spawns for map ${globalmap}`);
         });
     }
 
@@ -753,20 +747,20 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    static disableSpawnSystems(): void 
+    static disableSpawnSystems(container: DependencyContainer): void
     {
-        let map: keyof ILocations;
-        for (map in locations) 
-        {
-            if (map === "base" || map === "hideout") 
-            {
-                continue;
-            }
-            // locations[map].base.OfflineNewSpawn = false;
-            // locations[map].base.OfflineOldSpawn = true;
-            locations[map].base.NewSpawn = false;
-            locations[map].base.OldSpawn = true;
+        const DB = container.resolve("DatabaseService").getTables();
+        const locations = Object.keys(DB.locations);
+        for (const loc of locations) {
+            const base = DB.locations[loc].base;
+            if (!base) continue;
+            // Set spawn systems
+            base.NewSpawn = false;
+            base.OfflineNewSpawn = false;
+            base.OldSpawn = true;
+            base.OfflineOldSpawn = true;
         }
+        logger.info("SWAG: Spawn Systems Set")
     }
 
     static clearDefaultSpawns(): void 
