@@ -53,6 +53,7 @@ import sanitar from "../config/bosses/sanitar.json";
 import shturman from "../config/bosses/shturman.json";
 import tagilla from "../config/bosses/tagilla.json";
 import zryachiy from "../config/bosses/zryachiy.json";
+import partisan from "../config/bosses/partisan.json";
 
 // Spawn Configs
 import bloodhounds from "../config/other/bloodhounds.json";
@@ -83,7 +84,8 @@ const bossSpawnConfigs = [
     sanitar,
     shturman,
     tagilla,
-    zryachiy
+    zryachiy,
+    partisan
 ];
 
 const customSpawnConfigs = [
@@ -168,9 +170,9 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
         );
 
         staticRouterModService.registerStaticRouter(
-            `${modName}/client/match/offline/end`,
+            `${modName}/client/match/local/end`,
             [{
-                url: "/client/match/offline/end",
+                url: "/client/match/local/end",
                 action: async (
                     url: string,
                     info: any,
@@ -261,22 +263,13 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                 {
                     try 
                     {
-                        // Retrieve configurations
-                        const configServer = container.resolve<ConfigServer>("ConfigServer");
-                        const botConfig = configServer.getConfig<IBotConfig>(ConfigTypes.BOT);
-                        const pmcConfig = configServer.getConfig<IPmcConfig>(ConfigTypes.PMC);
-
-                        // Disable PMC conversion
-                        const conversionTypes = ["assault", "cursedassault", "pmcbot", "exusec", "arenafighter", "arenafighterevent", "crazyassaultevent"];
-                        validMaps.forEach(location =>
-                        {
-                            conversionTypes.forEach(botType =>
-                            {
-                                const mapPmcChances = pmcConfig.convertIntoPmcChance[location];
-                                if (mapPmcChances)
-                                {
-                                    mapPmcChances[botType] = { min: 0, max: 0 };
-                                }
+                        const botConfig = container.resolve<ConfigServer>("ConfigServer").getConfig<IBotConfig>(ConfigTypes.BOT);
+                        const pmcConfig = container.resolve<ConfigServer>("ConfigServer").getConfig<IBotConfig>(ConfigTypes.PMC);
+                        const { convertIntoPmcChance } = pmcConfig;
+                        Object.entries(convertIntoPmcChance).forEach(([mapKey, map]) => {
+                            Object.entries(map).forEach(([roleKey, role]) => {
+                                role.min = 0;
+                                role.max = 0;
                             });
                         });
                         logger.info("SWAG: PMC conversion is OFF (this is good - be sure this loads AFTER Realism/SVM)");
@@ -817,7 +810,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
             )
             {
                 locations[map].base.BossLocationSpawn = [];
-                return;
+                continue;
             }
 
             // Remove Default Boss Spawns
