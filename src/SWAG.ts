@@ -65,6 +65,7 @@ import scav_snipers from "../config/other/scav_snipers.json";
 // Custom
 import punisher from "../config/custom/punisher.json"
 import legion from "../config/custom/legion.json"
+import {DatabaseService} from "@spt/services/DatabaseService";
 
 const otherSpawnConfigs = [
     bloodhounds,
@@ -749,7 +750,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
 
     static disableSpawnSystems(container: DependencyContainer): void
     {
-        const DB = container.resolve("DatabaseService").getTables();
+        const DB = container.resolve<DatabaseService>("DatabaseService").getTables();
         const locations = Object.keys(DB.locations);
         for (const loc of locations) {
             const base = DB.locations[loc].base;
@@ -783,6 +784,17 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                     openZones: this.getOpenZones(map)
                 };
             }
+
+            // Set bot USECs and BEARs to always be hostile to their chanced enemies
+            locations[map].base.BotLocationModifier.AdditionalHostilitySettings.forEach(setting =>
+            {
+                setting.BearEnemyChance = 100;
+                setting.UsecEnemyChance = 100;
+                setting.ChancedEnemies.forEach(enemy =>
+                {
+                    enemy.EnemyChance = 100;
+                })
+            })
 
             // Reset Database, Cringe  -- i stole this code from LUA
             locations[map].base.waves = [...SWAG.savedLocationData[map].waves];
