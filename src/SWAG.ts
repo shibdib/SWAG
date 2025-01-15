@@ -786,11 +786,11 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
             }
 
             // Set bot USECs and BEARs to always be hostile to their chanced enemies
-            locations[map].base.BotLocationModifier.AdditionalHostilitySettings.forEach(setting =>
+            locations[map].base.BotLocationModifier?.AdditionalHostilitySettings?.forEach(setting =>
             {
                 setting.BearEnemyChance = 100;
                 setting.UsecEnemyChance = 100;
-                setting.ChancedEnemies.forEach(enemy =>
+                setting.ChancedEnemies?.forEach(enemy =>
                 {
                     enemy.EnemyChance = 100;
                 })
