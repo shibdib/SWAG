@@ -785,15 +785,31 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                 };
             }
 
-            // Set bot USECs and BEARs to always be hostile to their chanced enemies
+            // Set bot USECs and BEARs to always be hostile to each other
             locations[map].base.BotLocationModifier?.AdditionalHostilitySettings?.forEach(setting =>
             {
-                setting.BearEnemyChance = 100;
-                setting.UsecEnemyChance = 100;
-                setting.ChancedEnemies?.forEach(enemy =>
+                if (setting.BotRole == "pmcUSEC" || setting.BotRole == "pmcBEAR")
                 {
-                    enemy.EnemyChance = 100;
-                })
+                    setting.BearEnemyChance = 100;
+                    setting.BearPlayerBehaviour = "AlwaysEnemies";
+                    setting.UsecEnemyChance = 100;
+                    setting.UsecPlayerBehaviour = "AlwaysEnemies";
+                    setting.SavageEnemyChance = 100;
+                    setting.SavagePlayerBehaviour = "AlwaysEnemies";
+
+                    // Add chanced enemies to AlwaysEnemies list then clear ChancedEnemies list
+                    if (setting.ChancedEnemies && setting.AlwaysEnemies)
+                    {
+                        for (const enemy of setting.ChancedEnemies)
+                        {
+                            if (!setting.AlwaysEnemies.includes(enemy.Role))
+                            {
+                                setting.AlwaysEnemies.push(enemy.Role);
+                            }
+                        }
+                    }
+                    setting.ChancedEnemies = [];
+                }
             })
 
             // Reset Database, Cringe  -- i stole this code from LUA
