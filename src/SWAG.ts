@@ -774,10 +774,11 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                 continue;
             }
 
+            const locationBase = locations[map].base;
+
             // Save a backup of the wave data and the BossLocationSpawn to use when restoring defaults on raid end. Store openzones in this data as well
             if (!SWAG.savedLocationData[map])
             {
-                const locationBase = locations[map].base;
                 SWAG.savedLocationData[map] = {
                     waves: locationBase.waves,
                     BossLocationSpawn: locationBase.BossLocationSpawn,
@@ -786,7 +787,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
             }
 
             // Set bot USECs and BEARs to always be hostile to each other
-            locations[map].base.BotLocationModifier?.AdditionalHostilitySettings?.forEach(setting =>
+            locationBase.BotLocationModifier?.AdditionalHostilitySettings?.forEach(setting =>
             {
                 if (setting.BotRole == "pmcUSEC" || setting.BotRole == "pmcBEAR")
                 {
@@ -794,8 +795,10 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                     setting.BearPlayerBehaviour = "AlwaysEnemies";
                     setting.UsecEnemyChance = 100;
                     setting.UsecPlayerBehaviour = "AlwaysEnemies";
-                    setting.SavageEnemyChance = 100;
-                    setting.SavagePlayerBehaviour = "AlwaysEnemies";
+                    if (setting.SavageEnemyChance)
+                    {
+                        setting.SavageEnemyChance = 100;
+                    }
 
                     // Add chanced enemies to AlwaysEnemies list then clear ChancedEnemies list
                     if (setting.ChancedEnemies && setting.AlwaysEnemies)
@@ -807,31 +810,40 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                                 setting.AlwaysEnemies.push(enemy.Role);
                             }
                         }
+
+                        if (!setting.AlwaysEnemies.includes("pmcBEAR"))
+                        {
+                            setting.AlwaysEnemies.push("pmcBEAR");
+                        }
+                        if (!setting.AlwaysEnemies.includes("pmcUSEC"))
+                        {
+                            setting.AlwaysEnemies.push("pmcUSEC");
+                        }
                     }
                     setting.ChancedEnemies = [];
                 }
             })
 
             // Reset Database, Cringe  -- i stole this code from LUA
-            locations[map].base.waves = [...SWAG.savedLocationData[map].waves];
-            locations[map].base.BossLocationSpawn = [
+            locationBase.waves = [...SWAG.savedLocationData[map].waves];
+            locationBase.BossLocationSpawn = [
                 ...SWAG.savedLocationData[map].BossLocationSpawn
             ];
 
             // Clear bots spawn
             if (!config?.UseDefaultSpawns?.Waves)
             {
-                locations[map].base.waves = [];
+                locationBase.waves = [];
             }
 
             // Clear boss spawn
-            const bossLocationSpawn = locations[map].base.BossLocationSpawn;
+            const bossLocationSpawn = locationBase.BossLocationSpawn;
             if (
                 !config?.UseDefaultSpawns?.Bosses &&
                 !config?.UseDefaultSpawns?.TriggeredWaves
             )
             {
-                locations[map].base.BossLocationSpawn = [];
+                locationBase.BossLocationSpawn = [];
                 continue;
             }
 
@@ -843,7 +855,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                     // Triggered wave check
                     if (bossLocationSpawn[i]?.TriggerName?.length === 0)
                     {
-                        locations[map].base.BossLocationSpawn.splice(i--, 1);
+                        locationBase.BossLocationSpawn.splice(i--, 1);
                     }
                 }
             }
@@ -856,7 +868,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                     // Triggered wave check
                     if (bossLocationSpawn[i]?.TriggerName?.length > 0)
                     {
-                        locations[map].base.BossLocationSpawn.splice(i--, 1);
+                        locationBase.BossLocationSpawn.splice(i--, 1);
                     }
                 }
             }
