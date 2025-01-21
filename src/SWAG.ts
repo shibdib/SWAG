@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import {
+    IAdditionalHostilitySettings,
     IBossLocationSpawn,
     ILocationBase,
     IWave
@@ -66,6 +67,71 @@ import scav_snipers from "../config/other/scav_snipers.json";
 import punisher from "../config/custom/punisher.json"
 import legion from "../config/custom/legion.json"
 import {DatabaseService} from "@spt/services/DatabaseService";
+
+const pmcHostilitySettings: IAdditionalHostilitySettings = {
+    AlwaysEnemies: [
+        "arenaFighter",
+        "arenaFighterEvent",
+        "assault",
+        "assaultGroup",
+        "bossBoar",
+        "bossBoarSniper",
+        "bossBully",
+        "bossGluhar",
+        "bossKilla",
+        "bossKnight",
+        "bossKojaniy",
+        "bossKolontay",
+        "bossPartisan",
+        "bossSanitar",
+        "bossTagilla",
+        "crazyAssaultEvent",
+        "cursedAssault",
+        "exUsec",
+        "followerBigPipe",
+        "followerBirdEye",
+        "followerBoar",
+        "followerBoarClose1",
+        "followerBoarClose2",
+        "followerGluharAssault",
+        "followerGluharScout",
+        "followerGluharSecurity",
+        "followerGluharSnipe",
+        "followerKojaniy",
+        "followerKolontayAssault",
+        "followerKolontaySecurity",
+        "followerSanitar",
+        "followerTagilla",
+        "marksman",
+        "peacemaker",
+        "pmcBEAR",
+        "pmcBot",
+        "pmcUSEC",
+        "sectactPriestEvent",
+        "sectantPriest",
+        "sectantWarrior",
+        "shooterBTR",
+        "skier",
+        "spiritSpring",
+        "spiritWinter"
+    ],
+    AlwaysFriends: [
+        "bossZryachiy",
+        "followerZryachiy",
+        "gifter",
+        "peacefullZryachiyEvent",
+        "ravangeZryachiyEvent"
+    ],
+    BearEnemyChance: 100,
+    BearPlayerBehaviour: "AlwaysEnemies",
+    BotRole: "",
+    ChancedEnemies: [],
+    Neutral: [],
+    SavagePlayerBehaviour: "AlwaysEnemies",
+    UsecEnemyChance: 100,
+    UsecPlayerBehaviour: "AlwaysEnemies",
+    Warn: []
+};
 
 const otherSpawnConfigs = [
     bloodhounds,
@@ -786,47 +852,21 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                 };
             }
 
-            // Set bot USECs and BEARs to always be hostile to each other and scavs
-            locationBase.BotLocationModifier?.AdditionalHostilitySettings?.forEach(setting =>
+            // Set bot USECs and BEARs to always be hostile to each other, scavs and bosses
+            const hostilitySettings = locationBase.BotLocationModifier?.AdditionalHostilitySettings;
+            if (hostilitySettings)
             {
-                if (setting.BotRole == "pmcUSEC" || setting.BotRole == "pmcBEAR")
+                for (let i = hostilitySettings.length - 1; i >= 0; i--)
                 {
-                    setting.BearEnemyChance = 100;
-                    setting.BearPlayerBehaviour = "AlwaysEnemies";
-                    setting.UsecEnemyChance = 100;
-                    setting.UsecPlayerBehaviour = "AlwaysEnemies";
-                    if (setting.SavageEnemyChance)
+                    const setting = hostilitySettings[i];
+                    if (setting.BotRole == "pmcUSEC" || setting.BotRole == "pmcBEAR")
                     {
-                        setting.SavageEnemyChance = 100;
-                    }
-                    setting.SavagePlayerBehaviour = "AlwaysEnemies";
-
-                    setting.AlwaysEnemies ??= [];
-
-                    // Add chanced enemies to AlwaysEnemies list then clear ChancedEnemies list
-                    if (setting.ChancedEnemies)
-                    {
-                        for (const enemy of setting.ChancedEnemies)
-                        {
-                            if (!setting.AlwaysEnemies.includes(enemy.Role))
-                            {
-                                setting.AlwaysEnemies.push(enemy.Role);
-                            }
-                        }
-                    }
-                    setting.ChancedEnemies = [];
-                    setting.Warn = [];
-
-                    if (!setting.AlwaysEnemies.includes("pmcBEAR"))
-                    {
-                        setting.AlwaysEnemies.push("pmcBEAR");
-                    }
-                    if (!setting.AlwaysEnemies.includes("pmcUSEC"))
-                    {
-                        setting.AlwaysEnemies.push("pmcUSEC");
+                        // Shallow copy pmcHostilitySettings and set BotRole to the current BotRole
+                        const newSetting: IAdditionalHostilitySettings = { ...pmcHostilitySettings, BotRole: setting.BotRole };
+                        hostilitySettings.splice(i, 1, newSetting)
                     }
                 }
-            })
+            }
 
             // Reset Database, Cringe  -- i stole this code from LUA
             locationBase.waves = [...SWAG.savedLocationData[map].waves];
