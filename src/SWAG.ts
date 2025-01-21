@@ -786,7 +786,7 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                 };
             }
 
-            // Set bot USECs and BEARs to always be hostile to each other
+            // Set bot USECs and BEARs to always be hostile to each other and scavs
             locationBase.BotLocationModifier?.AdditionalHostilitySettings?.forEach(setting =>
             {
                 if (setting.BotRole == "pmcUSEC" || setting.BotRole == "pmcBEAR")
@@ -799,9 +799,12 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                     {
                         setting.SavageEnemyChance = 100;
                     }
+                    setting.SavagePlayerBehaviour = "AlwaysEnemies";
+
+                    setting.AlwaysEnemies ??= [];
 
                     // Add chanced enemies to AlwaysEnemies list then clear ChancedEnemies list
-                    if (setting.ChancedEnemies && setting.AlwaysEnemies)
+                    if (setting.ChancedEnemies)
                     {
                         for (const enemy of setting.ChancedEnemies)
                         {
@@ -810,17 +813,18 @@ class SWAG implements IPreSptLoadMod, IPostDBLoadMod
                                 setting.AlwaysEnemies.push(enemy.Role);
                             }
                         }
-
-                        if (!setting.AlwaysEnemies.includes("pmcBEAR"))
-                        {
-                            setting.AlwaysEnemies.push("pmcBEAR");
-                        }
-                        if (!setting.AlwaysEnemies.includes("pmcUSEC"))
-                        {
-                            setting.AlwaysEnemies.push("pmcUSEC");
-                        }
                     }
                     setting.ChancedEnemies = [];
+                    setting.Warn = [];
+
+                    if (!setting.AlwaysEnemies.includes("pmcBEAR"))
+                    {
+                        setting.AlwaysEnemies.push("pmcBEAR");
+                    }
+                    if (!setting.AlwaysEnemies.includes("pmcUSEC"))
+                    {
+                        setting.AlwaysEnemies.push("pmcUSEC");
+                    }
                 }
             })
 
