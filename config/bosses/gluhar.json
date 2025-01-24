@@ -193,12 +193,12 @@
   ],
   "reserve": [
     {
-      "BossChance": 35,
-      "BossEscortAmount": "2",
+      "BossChance": 20,
+      "BossEscortAmount": "6",
       "BossEscortType": "followergluharsecurity",
       "BossName": "bossgluhar",
       "BossZone": [
-        "ZoneRailStrorage",
+        "ZoneSubStorage",
         "ZonePTOR2",
         "ZoneBarrack"
       ],

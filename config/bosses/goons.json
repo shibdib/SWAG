@@ -1,7 +1,7 @@
 {
   "customs": [
     {
-      "BossChance": 15,
+      "BossChance": 20,
       "BossEscortAmount": "2",
       "BossEscortType": "exusec",
       "BossName": "bossknight",
@@ -22,7 +22,7 @@
   ],
   "factory": [
     {
-      "BossChance": 15,
+      "BossChance": 20,
       "BossEscortAmount": "2",
       "BossEscortType": "exusec",
       "BossName": "bossknight",
@@ -148,7 +148,7 @@
   ],
   "lighthouse": [
     {
-      "BossChance": 15,
+      "BossChance": 20,
       "BossEscortAmount": "2",
       "BossEscortType": "exusec",
       "BossName": "bossknight",
@@ -190,7 +190,7 @@
   ],
   "shoreline": [
     {
-      "BossChance": 5,
+      "BossChance": 20,
       "BossEscortAmount": "2",
       "BossEscortType": "exusec",
       "BossName": "bossknight",

@@ -122,7 +122,7 @@
   ],
   "woods": [
     {
-      "BossChance": 35,
+      "BossChance": 20,
       "BossEscortAmount": "2",
       "BossEscortType": "followerkojaniy",
       "BossName": "bosskojaniy",

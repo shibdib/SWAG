@@ -5,7 +5,14 @@
       "BossEscortAmount": "0",
       "BossEscortType": "followerzryachiy",
       "BossName": "bosspartisan",
-      "BossZone": null,
+      "BossZone": [
+        "ZoneBridge",
+        "ZoneCrossRoad",
+        "ZoneGasStation",
+        "ZoneOldAZS",
+        "ZoneFactoryCenter",
+        "ZoneWade"
+      ],
       "Supports": null,
       "Time": -1
     }
@@ -83,7 +90,10 @@
       "BossEscortType": "followerzryachiy",
       "BossName": "bosspartisan",
       "BossZone": [
-        "Zone_Island"
+        "Zone_Island",
+        "Zone_LongRoad",
+        "Zone_Village",
+        "Zone_DestroyedHouse"
       ],
       "Supports": null,
       "Time": -1
@@ -106,7 +116,13 @@
       "BossEscortAmount": "0",
       "BossEscortType": "followerzryachiy",
       "BossName": "bosspartisan",
-      "BossZone": null,
+      "BossZone": [
+        "ZoneStartVillage",
+        "ZoneForestTruck",
+        "ZoneForestSpawn",
+        "ZoneMeteoStation",
+        "ZonePort"
+      ],
       "Supports": null,
       "Time": -1
     }
@@ -128,7 +144,12 @@
       "BossEscortAmount": "0",
       "BossEscortType": "followerzryachiy",
       "BossName": "bosspartisan",
-      "BossZone": null,
+      "BossZone": [
+        "ZoneHouse",
+        "ZoneRoad",
+        "ZoneBigRocks",
+        "ZoneBrokenVill"
+      ],
       "Supports": null,
       "Time": -1
     }

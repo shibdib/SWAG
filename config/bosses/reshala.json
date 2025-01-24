@@ -1,13 +1,14 @@
 {
   "customs": [
     {
-      "BossChance": 35,
+      "BossChance": 20,
       "BossEscortAmount": "4",
       "BossEscortType": "followerbully",
       "BossName": "bossbully",
       "BossZone": [
         "ZoneDormitory",
-        "ZoneGasStation"
+        "ZoneGasStation",
+        "ZoneScavBase"
       ],
       "Supports": null,
       "Time": -1
